@@ -42,11 +42,11 @@
     <h3 style="padding: 5px" class="col-6">Search for: "Dummy Search" returned 4 products</h3>
     <span class="col-4"></span>
 </div>
+
 <section id="searchBar" style="padding: 50px 200px 40px 200px">
 <input class="form-control" type="text" placeholder="Previous Search to be displayed here" id="Search">
 <div id="user-msg" class="feedback" style="color:red"></div>
 </section>
-
 
 <!--- results table--->
 <table id="searchTable" class="table" >
@@ -85,6 +85,7 @@
     </tr>
     </thead>
 </table>
+<!--- event listener for mouseover, highlights box--->
 <script>
     var x = document.querySelectorAll(".item");
     x.forEach(function (row) {
