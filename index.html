@@ -14,38 +14,41 @@
 <body>
 
     <header>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e51e17">
-            <a class="navbar-brand" href="#">
+        <!--top navigation bar. Customized template from bootstrap-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e51e17"> <!--red background-->
+            <a class="navbar-brand" href="#"> <!--implementation of logo-->
                 <img src="img/churn.jpeg" width="40" height="40" alt="churn_logo">
                 Churn
             </a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse"> <!--navigation menu in the top bar-->
+                <ul class="navbar-nav"> <!--list of navigation items-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html" class="nav">Home</a>
+                        <a class="nav-link" href="index.html" class="nav">Home</a> <!--links to index-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onClick="addRow()" class="nav" style="cursor: pointer">Add a Card</a>
+                        <a class="nav-link" onClick="addRow()" class="nav" style="cursor: pointer">Add a Card</a> <!--adds a card on this page-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="help.html" class="nav">Help</a>
+                        <a class="nav-link" href="help.html" class="nav">Help</a> <!--links to help page-->
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section id="searchBar" style="padding: 50px 200px 40px 200px">
-        <input class="form-control" type="text" placeholder="Search optimal card by Category, Store, etc." id="Search">
-        <div id="user-msg" class="feedback" style="color:red"></div>
+    <section id="searchBar" style="padding: 50px 200px 40px 200px"><!--spacing for search bar-->
+        <div class="row">
+            <input class="form-control" type="text" placeholder="Find optimal card by Category, Store, etc." id="Search"><!--setting defaults for search bar-->
+            <a class="btn btn-default" href="searchResults.html" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
+        </div>
     </section>
 
 
 
-    <table id="cardTable" class="table" >
+    <table id="cardTable" class="table" ><!--table of credit cards inputted by user-->
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Name</th> <!--names of the columns-->
                 <th>Point Multipliers</th>
                 <th>Other Benefits</th>
                 <th>Balance </th>
@@ -54,11 +57,18 @@
         </thead>
     </table>
 
-    <div class="centerer">
-        <div class="cssCircle" onClick="addRow()"> + </div>
+    <div class="centerer"> <!-- centers button on page-->
+        <div class="circle" id="plusButton"> + </div> <!--creates the "plus" button-->
     </div>
 
 </body>
+
+<script>
+    var plusButton = document.getElementById("plusButton");
+    plusButton.onclick = () => { //anonymous and arrow function that adds a row/card when the plus button is pressed
+        addRow();
+    }
+</script>
 
 
 </html>

@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.cssCircle {
+.circle {
 
     width: 60px;
     height: 60px;
@@ -34,7 +34,8 @@
 
 }
 
-.cssCircle:hover {
+.circle:hover {
     background: #990000 ;
     cursor: pointer;
 }
+
