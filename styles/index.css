@@ -26,6 +26,9 @@
     transition: background 0.1s linear;
 
 }
+.item{
+    color: black;
+    background-color: white;
 }
 
 .cssPlusButton {
