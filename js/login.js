@@ -3,7 +3,7 @@ function activateRegister() {
     var i, content;
 
     content = document.getElementsByClassName("tab");
-    console.log(content)
+
     for (i = 0; i < content.length; i++) {
         content[i].style.display = 'none';
     }
@@ -18,7 +18,7 @@ function activateLogin() {
     var i, content;
 
     content = document.getElementsByClassName("tab");
-    console.log(content)
+
     for (i = 0; i < content.length; i++) {
         content[i].style.display = 'none';
     }
@@ -27,5 +27,8 @@ function activateLogin() {
     document.getElementById("login-form").style.display = "block"
 
 };
+
+
+
 
 
