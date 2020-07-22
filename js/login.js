@@ -1,4 +1,4 @@
-
+//activates Register view, disables Login view
 function activateRegister() {
     var i, content;
 
@@ -12,6 +12,8 @@ function activateRegister() {
     document.getElementById("register-form").style.display = "block";
 
 };
+
+//disables register view, activates login view
 function activateLogin() {
     var i, content;
 
@@ -24,5 +26,6 @@ function activateLogin() {
     document.getElementById("register-form-link").className= '#';
     document.getElementById("login-form").style.display = "block"
 
-}
+};
+
 
