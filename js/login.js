@@ -24,5 +24,6 @@ function activateLogin() {
     document.getElementById("register-form-link").className= '#';
     document.getElementById("login-form").style.display = "block"
 
-}
+};
+
 
