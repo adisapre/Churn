@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Churn</title>
+    <title>Add a Card</title>
     <meta name="author" content="Thomas A Davis (tad8tt) Adi Sapre (ads4dv)">
-    <meta name="description" content="Primary landing page for Churn, featuring search and the user's credit cards">
+    <meta name="description" content="Page to add credit cards to an account.">
     <!--- used bootstrap buttons and inputs on this page, as well as the nav bar CSS --->
     <link id="bootstrap-css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src ="js/index.js"></script>
