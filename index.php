@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse"> <!--navigation menu in the top bar-->
                 <ul class="navbar-nav"> <!--list of navigation items-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html" class="nav">Home</a> <!--links to index-->
+                        <a class="nav-link" href="index.php" class="nav">Home</a> <!--links to index-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addCard.html" class="nav" style="cursor: pointer">Add a Card</a> <!--adds a card on this page-->
+                        <a class="nav-link" href="addCard.php" class="nav" style="cursor: pointer">Add a Card</a> <!--adds a card on this page-->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="help.html" class="nav">Help</a> <!--links to help page-->
@@ -42,7 +42,7 @@
     <section id="searchBar" style="padding: 50px 200px 40px 200px"><!--spacing for search bar-->
         <div class="row">
             <input class="form-control" type="text" placeholder="Find optimal card by Category, Store, etc." id="Search"><!--setting defaults for search bar-->
-            <a class="btn btn-default" href="searchResults.html" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
+            <a class="btn btn-default" href="searchResults.php" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
         </div>
     </section>
 

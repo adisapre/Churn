@@ -19,10 +19,10 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html" class="nav">Home</a>
+                    <a class="nav-link" href="index.php" class="nav">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="addCard.html" class="nav" style="cursor: pointer">Add a Card</a>
+                    <a class="nav-link" href="addCard.php" class="nav" style="cursor: pointer">Add a Card</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="help.html" class="nav">Help</a>
@@ -48,7 +48,7 @@
 
 <section id="searchBar" style="padding: 50px 200px 40px 200px">
     <input class="form-control" type="text" placeholder="Previous Search to be displayed here" id="Search">
-    <a class="btn btn-default" href="searchResults.html" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
+    <a class="btn btn-default" href="searchResults.php" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
     <div id="user-msg" class="feedback" style="color:red"></div>
 </section>
 

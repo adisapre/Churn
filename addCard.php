@@ -23,10 +23,10 @@
         <div class="collapse navbar-collapse"> <!--navigation menu in the top bar-->
             <ul class="navbar-nav"> <!--list of navigation items-->
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html" class="nav">Home</a> <!--links to index-->
+                    <a class="nav-link" href="index.php" class="nav">Home</a> <!--links to index-->
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="addCard.html" class="nav" style="cursor: pointer">Add a Card</a> <!--adds a card on this page-->
+                    <a class="nav-link" href="addCard.php" class="nav" style="cursor: pointer">Add a Card</a> <!--adds a card on this page-->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="help.html" class="nav">Help</a> <!--links to help page-->

@@ -12,7 +12,7 @@ $result = $statement->fetchAll();
 $num = count($result);
 
 if ($num == 1){
-    echo "<script type='text/javascript'>window.location.href ='../index.html';</script>";
+    echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
 
 }
 else{
