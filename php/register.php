@@ -23,7 +23,10 @@ else{
     $statement->execute();
     //release cursor
     $statement->closeCursor();
-    header('location: ../index.php');
+    session_start();
+    $_SESSION['user'] = $name;
+    $_SESSION['password'] = $password;
+    header("location: ../index.php");
 }
 
 ?>

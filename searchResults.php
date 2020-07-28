@@ -9,6 +9,13 @@
     <meta name="author" content="Adi Sapre (ads4dv) and Thomas Davis (tad8tt)">
 </head>
 <body>
+<?php session_start();
+
+?>
+<?php
+if (isset($_SESSION['user']))
+{
+?>
 <!-- nav bar area-->
 <header>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e51e17">
@@ -108,4 +115,10 @@
 </script>
 
 </body>
+<?php
+}
+else{
+    header('Location: login.html');
+}
+?>
 </html>

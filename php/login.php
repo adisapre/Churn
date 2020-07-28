@@ -1,7 +1,7 @@
 <?php
 require("connect_db.php");
 
-$name = $_POST['username'];
+$name = trim($_POST['username']);
 
 $password = md5($_POST['password']);
 //check for duplicate usernames
@@ -12,7 +12,11 @@ $result = $statement->fetchAll();
 $num = count($result);
 
 if ($num == 1){
-    echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
+    session_start();
+    $_SESSION['user'] = $name;
+    $_SESSION['password'] = $password;
+    header("location: ../index.php");
+    //echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
 
 }
 else{

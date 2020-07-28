@@ -12,6 +12,13 @@
 
 </head>
 <body>
+<?php session_start();
+
+?>
+<?php
+if (isset($_SESSION['user']))
+{
+?>
 
     <header>
         <!--top navigation bar. Customized template from bootstrap-->
@@ -72,6 +79,11 @@
         addRow();
     }
 </script>
-
+<?php
+}
+else{
+    header('Location: login.html');
+}
+?>
 
 </html>

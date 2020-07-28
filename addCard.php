@@ -12,7 +12,13 @@
 
 </head>
 <body>
+<?php session_start();
 
+?>
+<?php
+if (isset($_SESSION['user']))
+{
+?>
 <header>
     <!--top navigation bar. Customized template from bootstrap-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e51e17"> <!--red background-->
@@ -30,6 +36,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="help.html" class="nav">Help</a> <!--links to help page-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="php/logout.php" class="nav">Log Out</a>
                 </li>
             </ul>
         </div>
@@ -65,6 +74,11 @@
 
 
 </body>
-
+<?php
+}
+else{
+    header('Location: login.html');
+}
+?>
 
 </html>
