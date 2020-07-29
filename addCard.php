@@ -59,6 +59,18 @@ if (isset($_SESSION['user']))
         </select>
     </div>
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
+            <label for="cardRewards">Credit Card Rewards</label>
+            <select id="cardRewards" class="custom-select" data-live-search="true" required>
+                <option value="">Choose...</option>
+                <option>5% cashback Restaurants, 3% cashback Grocery Stores, 1% cashback elsewehere</option>
+                <option>5% cashback Amazon, 2% cashback Restaurants, 1% cashback elsewhere</option>
+                <option>1.5% cashback everywhere</option>
+                <option>5% cashback Restaurants Jan-Jun, 5% cashback Gas Stations Jul-Dec</option>
+                <option>4X points Dining, 3X points travel, 2X points elsewhere</option>
+                <option>1X points everywhere</option>
+            </select>
+        </div>
+    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
         <label for="cardBalance">Credit Card Balance</label>
         <input type="text" id="cardBalance" class="form-control" placeholder="Current balance on card..." required>
         </input>
