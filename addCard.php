@@ -46,7 +46,8 @@ if (isset($_SESSION['user']))
 </header>
 
 <form name="cardInfo" method="get" class="centerer" action="php/cardAdder.php">
-    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
+
+    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for model of card-->
         <label for="cardModel">Credit Card Model</label>
         <select id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
             <option value="">Choose...</option>
@@ -58,7 +59,8 @@ if (isset($_SESSION['user']))
             <option>Chase Sapphire Reserve</option>
         </select>
     </div>
-    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
+
+    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card rewards-->
             <label for="cardRewards">Credit Card Rewards</label>
             <select id="cardRewards" name="cardRewards" class="custom-select" data-live-search="true" required>
                 <option value="">Choose...</option>
@@ -70,19 +72,22 @@ if (isset($_SESSION['user']))
                 <option>1X points everywhere</option>
             </select>
         </div>
-    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
-        <label for="cardBalance">Credit Card Balance</label>
-        <input type="text" id="cardBalance" name="cardBalance" class="form-control" placeholder="Current balance on card..." required>
-        </input>
-    </div>
-    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
-        <label for="cardLimit">Credit Card Limit</label>
-        <input type="text" id="cardLimit" name="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required>
-        </input>
-    </div>
-    <input type="hidden" name="username" id="username" value="<?php echo $_SESSION['user'];?>">
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card balance-->
+        <label for="cardBalance">Credit Card Balance</label>
+        <input type="number" id="cardBalance" name="cardBalance" class="form-control" placeholder="Current balance on card..." required>
+        </input>
+    </div>
+
+    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card limit-->
+        <label for="cardLimit">Credit Card Limit</label>
+        <input type="number" id="cardLimit" name="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required>
+        </input>
+    </div>
+
+    <input type="hidden" name="username" id="username" value="<?php echo $_SESSION['user'];?>"><!--inputs the username for proper display in index table-->
+
+    <button type="submit" class="btn btn-primary">Submit</button><!--submit card data-->
 </form>
 
 

@@ -55,18 +55,34 @@ if (isset($_SESSION['user']))
 
 
 
-    <table id="cardTable" class="table" ><!--table of credit cards inputted by user-->
-        <thead>
-            <tr>
-                <th>Name</th> <!--names of the columns-->
-                <th>Point Multipliers</th>
-                <th>Balance </th>
-            </tr>
-        </thead>
-    </table>
 
 
 </body>
+<?php
+    $connect=mysqli_connect("localhost","class","123456","churn"); //connect to the database
+
+    $result = mysqli_query($connect,"SELECT * FROM cardtable"); //get to the card table in the database
+
+     echo "<table id='cardTable' class='table'>
+                <thead>
+                     <tr>
+                         <th>Name</th> <!--names of the columns-->
+                         <th>Point Multipliers</th>
+                         <th>Balance </th>
+                     </tr>
+                 </thead>"; //set up table for better viewing
+
+    while($row = mysqli_fetch_array($result)) { //output data row by row, checking for the user each time
+        if($row['user'] == $_SESSION['user']) {
+            echo "<tr><td>" . $row['cardmodel'] . "</td><td>" . $row['cardrewards'] . "</td><td>" . $row['cardbalance'] . " / " . $row['cardlimit'] . "</td></tr>"; //columns of table
+            echo "<br />";//line break at end of row
+        }
+    }
+
+      echo "</table>"; //end the table
+
+    mysqli_close($connect);//end connection to database
+?>
 
 <?php
 }

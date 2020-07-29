@@ -1,4 +1,5 @@
 <?php
+//author: Thomas A Davis (tad8tt) Adi Sapre (ads4dv)
 require("connect_db.php");
 
 $name = trim($_POST['username']);
