@@ -1,0 +1,5 @@
+Thomas A Davis and Adi Sapre
+
+Our database is rather simple. It consists of two tables; the first, userdata, holds the login data of users. It has three columns: username, email, and password, which all store VARCHARs of length 255.
+The second table, cardtable, holds a user's card data. It has five columns: cardmodel, cardrewards, cardbalance, cardlimit, and user. cardmodel, cardrewards, and user are all VARCHARs of length 255,
+while cardbalance and cardlimit are ints. The username is stored in this table so that the index page doesn't show the data for all users when displayed in a HTML table.
