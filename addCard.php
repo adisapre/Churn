@@ -45,7 +45,7 @@ if (isset($_SESSION['user']))
     </nav>
 </header>
 
-<form class="centerer">
+<form name="cardInfo" method="get" class="centerer" action="php/cardAdder.php">
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
         <label for="cardModel">Credit Card Model</label>
         <select id="cardModel" class="custom-select" data-live-search="true" required>
@@ -80,6 +80,7 @@ if (isset($_SESSION['user']))
         <input type="text" id="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required>
         </input>
     </div>
+    <input type="hidden" name="username" id="username" value="<?php echo $_SESSION['user'];?>">
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
