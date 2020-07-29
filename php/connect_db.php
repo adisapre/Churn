@@ -1,35 +1,35 @@
+
 <?php
-$hostname = 'localhost:3306';
+function connect()
+{
+    global $db;
+
+    $hostname = 'localhost:3306';
 
 // database name
-$dbname = 'churn';
+    $dbname = 'churn';
 
 // database credentials
-$username = 'class';
-$password = '123456';
+    $username = 'class';
+    $password = '123456';
 
 
-$dsn = "mysql:host=$hostname;dbname=$dbname";
+    $dsn = "mysql:host=$hostname;dbname=$dbname";
 
 
-/** connect to the database **/
-try
-{
-    $db = new PDO($dsn, $username, $password);
+    /** connect to the database **/
+    try {
+        $db = new PDO($dsn, $username, $password);
 
-    //echo "<p>You are connected to the database</p>";
+    } catch (PDOException $e)     // handle a PDO exception (errors thrown by the PDO library)
+    {
+        $error_message = $e->getMessage();
+        echo "<p>An error occurred while connecting to the server: $error_message </p>";
+    } catch (Exception $e)       // handle any type of exception
+    {
+        $error_message = $e->getMessage();
+        echo "<p>Error message: $error_message </p>";
+    }
 }
-catch (PDOException $e)     // handle a PDO exception (errors thrown by the PDO library)
-{
-    // Call a method from any object, use the object's name followed by -> and then method's name
-    // All exception objects provide a getMessage() method that returns the error message
-    $error_message = $e->getMessage();
-    echo "<p>An error occurred while connecting to the server: $error_message </p>";
-}
-catch (Exception $e)       // handle any type of exception
-{
-    $error_message = $e->getMessage();
-    echo "<p>Error message: $error_message </p>";
-}
-
+connect();
 ?>

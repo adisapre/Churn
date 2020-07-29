@@ -52,7 +52,11 @@ if (isset($_SESSION['user']))
             <a class="btn btn-default" href="searchResults.php" style="background-color:#0066ff; color:white; width:100%;">Search</a><!--search button-->
         </div>
     </section>
-
+<div class="row">
+    <span class="col-5"></span>
+    <h1 class="col-2" style="text-align: center"><?php echo $_SESSION['user'] ?>'s Cards</h1>
+    <span class="col-4"></span>
+</div>
 
 
 
