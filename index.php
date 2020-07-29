@@ -61,7 +61,7 @@ if (isset($_SESSION['user']))
 <?php
     $connect=mysqli_connect("localhost","class","123456","churn"); //connect to the database
 
-    $result = mysqli_query($connect,"SELECT * FROM cardtable"); //get to the card table in the database
+    $cardtable = mysqli_query(mysqli_connect("localhost","class","123456","churn"),"SELECT * FROM cardtable"); //get to the card table in the database
 
      echo "<table id='cardTable' class='table'>
                 <thead>
@@ -72,7 +72,7 @@ if (isset($_SESSION['user']))
                      </tr>
                  </thead>"; //set up table for better viewing
 
-    while($row = mysqli_fetch_array($result)) { //output data row by row, checking for the user each time
+    while($row = mysqli_fetch_array($cardtable)) { //output data row by row, checking for the user each time
         if($row['user'] == $_SESSION['user']) {
             echo "<tr><td>" . $row['cardmodel'] . "</td><td>" . $row['cardrewards'] . "</td><td>" . $row['cardbalance'] . " / " . $row['cardlimit'] . "</td></tr>"; //columns of table
             echo "<br />";//line break at end of row
