@@ -48,7 +48,7 @@ if (isset($_SESSION['user']))
 <form name="cardInfo" method="get" class="centerer" action="php/cardAdder.php">
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
         <label for="cardModel">Credit Card Model</label>
-        <select id="cardModel" class="custom-select" data-live-search="true" required>
+        <select id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
             <option value="">Choose...</option>
             <option>Discover IT</option>
             <option>Amazon Prime Rewards Visa Signature</option>
@@ -60,7 +60,7 @@ if (isset($_SESSION['user']))
     </div>
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
             <label for="cardRewards">Credit Card Rewards</label>
-            <select id="cardRewards" class="custom-select" data-live-search="true" required>
+            <select id="cardRewards" name="cardRewards" class="custom-select" data-live-search="true" required>
                 <option value="">Choose...</option>
                 <option>5% cashback Restaurants, 3% cashback Grocery Stores, 1% cashback elsewehere</option>
                 <option>5% cashback Amazon, 2% cashback Restaurants, 1% cashback elsewhere</option>
@@ -72,12 +72,12 @@ if (isset($_SESSION['user']))
         </div>
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
         <label for="cardBalance">Credit Card Balance</label>
-        <input type="text" id="cardBalance" class="form-control" placeholder="Current balance on card..." required>
+        <input type="text" id="cardBalance" name="cardBalance" class="form-control" placeholder="Current balance on card..." required>
         </input>
     </div>
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;">
         <label for="cardLimit">Credit Card Limit</label>
-        <input type="text" id="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required>
+        <input type="text" id="cardLimit" name="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required>
         </input>
     </div>
     <input type="hidden" name="username" id="username" value="<?php echo $_SESSION['user'];?>">

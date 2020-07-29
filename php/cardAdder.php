@@ -4,12 +4,12 @@
 <?php
 if (isset($_SESSION['user']))
 {
-?>
+?> <?php
 require("connect_db.php");
 
-$cardmodel = $_POST['cardModel'];
+$cardmodel = $_GET['cardModel'];
 
-$cardrewards = $_POST['cardRewards'];
+$cardrewards = $_GET['cardRewards'];
 
 $cardbalance = $_GET['cardBalance'];
 
@@ -22,12 +22,19 @@ $statement = $db->prepare($checker);
 $statement->execute();
 $result = $statement->fetchAll();
 $num = count($result);
-echo $num;
-exit();
 
 
 if ($num == 1){
-    echo "<script type='text/javascript'>alert('Silly goose, you already have that card!');window.location.href ='../addCard.php';</script>";
+    $delete = "DELETE FROM cardtable WHERE `cardmodel`= '$cardmodel'";
+    $statement = $db->prepare($delete);
+    $statement->execute();
+    $query = "INSERT INTO cardtable (cardmodel, cardrewards, cardbalance, cardlimit, user) VALUES ('$cardmodel', '$cardrewards','$cardbalance', '$cardlimit', '$username')";
+            $statement = $db->prepare($query);
+            //run query
+            $statement->execute();
+            //release cursor
+            $statement->closeCursor();
+            header("location: ../index.php");
 
 }
 else{
@@ -37,11 +44,10 @@ else{
         $statement->execute();
         //release cursor
         $statement->closeCursor();
-        session_start();
-        $_SESSION['user'] = $name;
-        $_SESSION['password'] = $password;
         header("location: ../index.php");
 }
+
+?>
 <?php
 }
 else{

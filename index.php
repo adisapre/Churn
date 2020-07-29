@@ -60,25 +60,14 @@ if (isset($_SESSION['user']))
             <tr>
                 <th>Name</th> <!--names of the columns-->
                 <th>Point Multipliers</th>
-                <th>Other Benefits</th>
                 <th>Balance </th>
-                <th>Delete Card</th>
             </tr>
         </thead>
     </table>
 
-    <div class="centerer"> <!-- centers button on page-->
-        <div class="circle" id="plusButton"> + </div> <!--creates the "plus" button-->
-    </div>
 
 </body>
 
-<script>
-    var plusButton = document.getElementById("plusButton");
-    plusButton.onclick = () => { //anonymous and arrow function that adds a row/card when the plus button is pressed
-        addRow();
-    }
-</script>
 <?php
 }
 else{
