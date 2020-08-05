@@ -29,7 +29,7 @@ if (isset($_SESSION['user']))
                     <a class="nav-link" href="index.php" class="nav">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="addCard.php" class="nav" style="cursor: pointer">Add a Card</a>
+                    <a class="nav-link" href="http://localhost:4200" class="nav" style="cursor: pointer">Add a Card</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="help.html" class="nav">Help</a>
