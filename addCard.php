@@ -16,11 +16,12 @@
 
 ?>
 <?php
-if (isset($_SESSION['user']))
+if (isset($_SESSION['user'])) //local storage in java script instead of session object, need to attatch user to php to understand client-user connection -> hidden input/urlrewriting
 {
 ?>
 <header>
     <!--top navigation bar. Customized template from bootstrap-->
+
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e51e17"> <!--red background-->
         <a class="navbar-brand" href="#"> <!--implementation of logo-->
             <img src="img/churn.jpeg" width="40" height="40" alt="churn_logo">
