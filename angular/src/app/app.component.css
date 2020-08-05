@@ -1,4 +1,4 @@
-.centerer {
+.centerer{
   text-align: center;
 }
 
@@ -29,9 +29,4 @@
 .item{
   color: black;
   background-color: white;
-}
-
-.circle:hover {
-  background: #990000 ;
-  cursor: pointer;
 }
