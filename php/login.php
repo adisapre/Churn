@@ -16,6 +16,9 @@ if ($num == 1){
     session_start();
     $_SESSION['user'] = $name;
     $_SESSION['password'] = $password;
+    $userStored = "<script>localStorage.setItem('user',".$name.")</script>";
+    // echo $userStored;
+    //echo "<script>localStorage.getItem('user')</script>";
     header("location: ../index.php"); //replace with absolute path to angular component - url rewriting to add parameter to url. have angular send back user with data and assign as session object
     //echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
 

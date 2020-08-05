@@ -4,6 +4,7 @@ export class Card{
     public cardRewards: string,
     public cardBalance: number,
     public cardLimit: number,
+    public username: string,
 ){}
 
 

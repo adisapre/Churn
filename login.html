@@ -55,6 +55,7 @@
                                             <!--input validation then redirect for login-->
                                             <script>
                                                 function validateLogin() {
+
                                                     var loginUser= document.forms["login-form"]["username"].value;
                                                     var loginPass = document.forms["login-form"]["password"].value;
                                                     if (loginUser == ""){
@@ -65,6 +66,8 @@
                                                         alert("You must input your Password")
                                                         return false
                                                     }
+                                                    localStorage.setItem('user',loginUser);
+
                                                     /*setTimeout(function () {
                                                         window.location = "index.php"
 

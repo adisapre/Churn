@@ -10,6 +10,7 @@
     <script src ="js/index.js"></script>
     <link rel="stylesheet" href="styles/index.css">
 
+
 </head>
 <body>
 <?php session_start();
@@ -57,8 +58,6 @@ if (isset($_SESSION['user']))
     <h1 class="col-2" style="text-align: center"><?php echo $_SESSION['user'] ?>'s Cards</h1>
     <span class="col-4"></span>
 </div>
-
-
 
 
 </body>
