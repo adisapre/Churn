@@ -47,18 +47,14 @@
 <h1 [ngStyle]="{'color':'magenta'}" class="centerer">{{title}}</h1>
 <!--<form #cardForm="ngForm" name="cardInfo" method="get" class="centerer" (ngSubmit)="onSubmit(cardForm.value)" )> angular form- form modules--->
 <form  name="cardInfo" method="get" class="centerer">
-    <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for model of card-->
-        <label for="cardModel">Credit Card Model</label>
-        <select #cardModel="ngModel" [(ngModel)]="cardTemp.cardModel" id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
-            <option value="">Choose...</option>
-            <option>Discover IT</option>
-            <option>Amazon Prime Rewards Visa Signature</option>
-            <option>Chase Freedom Unlimited</option>
-            <option>Chase Freedom</option>
-            <option>Chase Sapphire Preferred</option>
-            <option>Chase Sapphire Reserve</option>
-        </select>
-    </div>
+  <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for model of card-->
+    <label for="cardModel">Credit Card Model</label>
+    <select #cardModel="ngModel" [(ngModel)]="cardTemp.cardModel" id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
+      <option value="">Choose...</option>
+      <option *ngFor="let cardModel of cardModels"> {{ cardModel }}
+      </option>
+    </select>
+  </div>
 
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card rewards-->
             <label for="cardRewards">Credit Card Rewards</label>
@@ -94,14 +90,19 @@
 
 
 <div class="centerer">
-<h2>Card Submission Confirmation</h2>
-{{cardTemp.cardModel}}
+  <h2>Card Submission Confirmation</h2>
+  {{cardTemp.cardModel}}
   <br/>
   {{cardTemp.cardRewards}}
   <br/>
+  <h3 style="color: red" *ngIf="cardTemp.cardBalance > cardTemp.cardLimit"
+      class="text">Balance cannot be greater than limit.
+  </h3>
   {{cardTemp.cardBalance}} / {{cardTemp.cardLimit}}
-  <br/>
 </div>
+
+<br/>
+
 
 </body>
 

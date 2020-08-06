@@ -18,6 +18,7 @@ export class AppComponent {
   title = "Add A Card";
   confirm_msg = '';
   data_submitted = '';
+  cardModels = ["Discover IT", "Amazon Prime Rewards Visa Signature", "Chase Freedom Unlimited", "Chase Freedom", "Chase Sapphire Preferred", "Chase Sapphire Reserve"];
 
   responsedata = new Card(null,null,null,null,null);
 
