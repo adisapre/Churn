@@ -84,13 +84,13 @@
     <input username ="ngForm" [(ngModel)]="cardTemp.username" type="hidden" name="username" id="username" value=""><!--inputs the username for proper display in index table-->
 
   <!--<input (click)="confirmSubmission(cardForm.value)" class="btn btn-primary" value="Submit">submit card data-->
-  <input type= submit class="btn btn-primary" value="Submit">
+  <input type= submit class="btn btn-primary" (click)= "clickEvent()" value="Submit">
 
 </form>
 
 
 <div class="centerer">
-  <h2>Card Submission Confirmation</h2>
+  <h2 [ngClass]="status ? 'confirmed':''">Card Submission Confirmation</h2>
   {{cardTemp.cardModel}}
   <br/>
   {{cardTemp.cardRewards}}

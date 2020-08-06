@@ -19,6 +19,10 @@ export class AppComponent {
   confirm_msg = '';
   data_submitted = '';
   cardModels = ["Discover IT", "Amazon Prime Rewards Visa Signature", "Chase Freedom Unlimited", "Chase Freedom", "Chase Sapphire Preferred", "Chase Sapphire Reserve"];
+  status: boolean = false;
+  clickEvent(){
+    this.status = true;
+  }
 
   responsedata = new Card(null,null,null,null,null);
 
