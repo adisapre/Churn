@@ -1,25 +1,22 @@
+<?php session_start();
+
+?>
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
-header('Access-Control-Max-Age: 1000');
-header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
-
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
-
-
+if (isset($_SESSION['user']))
+{
+?> <?php
 //author: Thomas A Davis (tad8tt) Adi Sapre (ads4dv)
 require("connect_db.php");
 
-$cardmodel = $request->cardModel ; //pull data for a card from the form
+$cardmodel = $_GET['cardModel']; //pull data for a card from the form
 
-$cardrewards = $request->cardRewards;
+$cardrewards = $_GET['cardRewards'];
 
-$cardbalance = $request->cardBalance;
+$cardbalance = $_GET['cardBalance'];
 
-$cardlimit = $request->cardLimit;
+$cardlimit = $_GET['cardLimit'];
 
-$username = $request->username; //store the username in the table for better display on the landing page
+$username = $_SESSION['user']; //store the username in the table for better display on the landing page
 //check for duplicate cards
 $checker = "SELECT * FROM cardtable WHERE `cardmodel` = '$cardmodel'";
 $statement = $db->prepare($checker);
@@ -49,6 +46,13 @@ else{//inserts date from form into table
         //release cursor
         $statement->closeCursor();
         header("location: ../index.php");
+}
+
+?>
+<?php
+}
+else{
+    header('Location: login.html');
 }
 
 ?>
