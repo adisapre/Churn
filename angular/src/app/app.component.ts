@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {HttpClient, HttpErrorResponse,HttpParams} from "@angular/common/http";
 import {Card} from "./card";
+import { FormsModule } from '@angular/forms';
+//import {}
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent {
 
   responsedata = new Card(null,null,null,null,null);
 
-  cardModel = new Card("Discover IT","5% cashback Restaurants, 3% cashback Grocery Stores, 1% cashback elseweher",10000,10000,"username");
+  cardTemp = new Card("Discover IT","5% cashback Restaurants, 3% cashback Grocery Stores, 1% cashback elsewhere",10000,10000,"username");
 
   confirmSubmission(data){
     this.confirm_msg = "You submitted the following:";

@@ -45,11 +45,11 @@
 </header>
 
 <h1 [ngStyle]="{'color':'magenta'}" class="centerer">{{title}}</h1>
-<form name="cardInfo" method="get" class="centerer" action="php/cardAdder.php"> <!--angular form- form modules--->
-
+<!--<form #cardForm="ngForm" name="cardInfo" method="get" class="centerer" (ngSubmit)="onSubmit(cardForm.value)" )> angular form- form modules--->
+<form  name="cardInfo" method="get" class="centerer">
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for model of card-->
         <label for="cardModel">Credit Card Model</label>
-        <select id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
+        <select #cardModel="ngModel" [(ngModel)]="cardTemp.cardModel" id="cardModel" name="cardModel" class="custom-select" data-live-search="true" required>
             <option value="">Choose...</option>
             <option>Discover IT</option>
             <option>Amazon Prime Rewards Visa Signature</option>
@@ -62,7 +62,7 @@
 
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card rewards-->
             <label for="cardRewards">Credit Card Rewards</label>
-            <select id="cardRewards" name="cardRewards" class="custom-select" data-live-search="true" required>
+            <select #cardRewards ="ngModel" [(ngModel)]="cardTemp.cardRewards" id="cardRewards" name="cardRewards" class="custom-select" data-live-search="true" required>
                 <option value="">Choose...</option>
                 <option>5% cashback Restaurants, 3% cashback Grocery Stores, 1% cashback elsewehere</option>
                 <option>5% cashback Amazon, 2% cashback Restaurants, 1% cashback elsewhere</option>
@@ -75,23 +75,31 @@
 
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card balance-->
         <label for="cardBalance">Credit Card Balance</label>
-        <input type="number" id="cardBalance" name="cardBalance" class="form-control" placeholder="Current balance on card..." required/>
+        <input #cardBalance="ngModel" type="number" id="cardBalance" [(ngModel)]="cardTemp.cardBalance" name="cardBalance" class="form-control" placeholder="Current balance on card..." required/>
 
     </div>
 
     <div class="form-group col-md-6" style="padding: 25px 100px 20px 100px position: absolute; left: 25%;"><!--selector for card limit-->
         <label for="cardLimit">Credit Card Limit</label>
-        <input type="number" id="cardLimit" name="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required/>
+        <input #cardLimit ="ngModel"  type="number" id="cardLimit" [(ngModel)]="cardTemp.cardLimit" name="cardLimit" class="form-control" placeholder="Maximum chargeable amount to card..." required/>
 
     </div>
 
-    <input type="hidden" name="username" id="username" value=""><!--inputs the username for proper display in index table-->
+    <input username ="ngForm" [(ngModel)]="cardTemp.username" type="hidden" name="username" id="username" value=""><!--inputs the username for proper display in index table-->
 
-    <button type="submit" class="btn btn-primary">Submit</button><!--submit card data-->
+  <!--<input (click)="confirmSubmission(cardForm.value)" class="btn btn-primary" value="Submit">submit card data-->
+  <input class="btn btn-primary" value="Submit">
 
 </form>
 
-
+<!--
+<div class="centerer">
+<h2>Card Submission Confirmation</h2>
+{{cardTemp.cardModel}}
+  <br/>
+  {{cardRewards}}
+</div>
+--->
 </body>
 
 
